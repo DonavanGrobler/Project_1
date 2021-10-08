@@ -16,16 +16,16 @@ public class AccountType implements Serializable {
 
 
     private Long accTypeId;
-    private String mnemoic;
+    private String mnemonic;
     private String accName;
     private String userName;
     private String userLastName;
     private Long miles;
     private LocalDate startDate;
 
-    public AccountType(Long accTypeId, String mnemoic, String accName, String userName, String userLastName, Long miles, LocalDate startDate) {
+    public AccountType(Long accTypeId, String mnemonic, String accName, String userName, String userLastName, Long miles, LocalDate startDate) {
         this.accTypeId = accTypeId;
-        this.mnemoic = mnemoic;
+        this.mnemonic = mnemonic;
         this.accName = accName;
         this.userName = userName;
         this.userLastName = userLastName;
@@ -44,12 +44,12 @@ public class AccountType implements Serializable {
         this.accTypeId = accTypeId;
     }
 
-    @Column(name = "MNEMOIC")
-    public String getMnemoic() {
-        return mnemoic;
+    @Column(name = "MNEMONIC")
+    public String getMnemonic() {
+        return mnemonic;
     }
-    public void setMnemoic(String mnemoic) {
-        this.mnemoic = mnemoic;
+    public void setMnemonic(String mnemonic) {
+        this.mnemonic = mnemonic;
     }
 
     @Column(name = "ACC_NAME")

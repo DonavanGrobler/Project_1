@@ -36,6 +36,7 @@ public class GeneralResponse <T> implements Serializable {
 
     @Override
     public String toString() {
-        return "GeneralResponse{" + "successful=" + successful + ", payload=" + payload + '}';
+        return
+                "GeneralResponse{" + "successful=" + successful + ", payload=" + payload + '}';
         }
 }

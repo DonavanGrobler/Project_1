@@ -8,10 +8,12 @@ import java.util.Objects;
 @Entity
 @Table(name = "TRANSACTION_TABLE", schema = "PROJECT1" )
 public class AccountTransaction implements Serializable {
+    private static final long serialVersionUID = 1199041377884282633L;
 
     @Id
     @SequenceGenerator(name = "TRANSACTION_TABLE_SEQ", sequenceName = "TRANSACTION_TABLE_SEQ.VIT_RSA_GENERIC_SEQ, allocationSize = 1")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRANSACTION_TABLE_SEQ")
+
 
     private Long transactionId;
     private Long accTypeId;
@@ -79,5 +81,28 @@ public class AccountTransaction implements Serializable {
     }
     public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AccountTransaction that = (AccountTransaction) o;
+        return Objects.equals(transactionId, that.transactionId) && Objects.equals(accTypeId, that.accTypeId) && Objects.equals(memberId, that.memberId) && Objects.equals(gainedMiles, that.gainedMiles) && Objects.equals(transactionDate, that.transactionDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(transactionId, accTypeId, memberId, gainedMiles, transactionDate);
+    }
+
+    @Override
+    public String toString() {
+        return "AccountTransaction{" +
+                "transactionId=" + transactionId +
+                ", accTypeId=" + accTypeId +
+                ", memberId=" + memberId +
+                ", gainedMiles=" + gainedMiles +
+                ", txDate=" + transactionDate +
+                '}';
     }
 }

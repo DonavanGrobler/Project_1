@@ -23,7 +23,7 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
 
     @Override
     public List<AccountTypeDto> getAllAccountTypes() {
-        return accountTypeTranslator.getAllACcountTypes();
+        return accountTypeTranslator.getAllAccountTypes();
     }
 
     @Override

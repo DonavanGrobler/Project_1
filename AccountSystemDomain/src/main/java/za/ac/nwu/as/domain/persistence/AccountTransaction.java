@@ -6,23 +6,23 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TRANSACTION_TABLE", schema = "PROJECT1" )
+@Table(name = "ACCOUNTTRANSACTION", schema = "PROJECT1" )
 public class AccountTransaction implements Serializable {
     private static final long serialVersionUID = 1199041377884282633L;
 
     @Id
-    @SequenceGenerator(name = "TRANSACTION_TABLE_SEQ", sequenceName = "TRANSACTION_TABLE_SEQ.VIT_RSA_GENERIC_SEQ, allocationSize = 1")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TRANSACTION_TABLE_SEQ")
+    @SequenceGenerator(name = "ACCOUNTTRANSACTION_SEQ", sequenceName = "ACCOUNTTRANSACTION_SEQ.VIT_RSA_GENERIC_SEQ, allocationSize = 1")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNTTRANSACTION_SEQ")
 
 
     private Long transactionId;
     private Long accTypeId;
     private Long memberId;
-    private Long gainedMiles;
+    private Integer gainedMiles;
     private Long usedMiles;
     private LocalDate transactionDate;
 
-    public AccountTransaction(Long transactionId, Long accTypeId, Long memberId, Long gainedMiles, Long usedMiles, LocalDate transactionDate) {
+    public AccountTransaction(Long transactionId, Long accTypeId, Long memberId, Integer gainedMiles, Long usedMiles, LocalDate transactionDate) {
         this.transactionId = transactionId;
         this.accTypeId = accTypeId;
         this.memberId = memberId;
@@ -31,7 +31,7 @@ public class AccountTransaction implements Serializable {
         this.transactionDate = transactionDate;
     }
 
-    public AccountTransaction() {
+    public AccountTransaction(Long accountTypeId, Long memberId, Integer gainedMiles, LocalDate transactionDate) {
     }
 
     @Column(name = "TRANSACTION_ID")
@@ -60,10 +60,10 @@ public class AccountTransaction implements Serializable {
     }
 
     @Column(name = "GAINED_MILES")
-    public Long getGainedMiles() {
+    public Integer getGainedMiles() {
         return gainedMiles;
     }
-    public void setGainedMiles(Long gainedMiles) {
+    public void setGainedMiles(Integer gainedMiles) {
         this.gainedMiles = gainedMiles;
     }
 
@@ -102,7 +102,7 @@ public class AccountTransaction implements Serializable {
                 ", accTypeId=" + accTypeId +
                 ", memberId=" + memberId +
                 ", gainedMiles=" + gainedMiles +
-                ", txDate=" + transactionDate +
+                ", transactionDate=" + transactionDate +
                 '}';
     }
 }

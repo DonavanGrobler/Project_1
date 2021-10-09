@@ -5,7 +5,6 @@ import za.ac.nwu.as.domain.dto.AccountTransactionDto;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
 import za.ac.nwu.as.logic.flow.FetchAccountTransactionFlow;
 import za.ac.nwu.as.translator.AccountTransactionTranslator;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;

@@ -33,7 +33,7 @@ public class AccountType implements Serializable {
         this.startDate = startDate;
     }
 
-    public AccountType() {
+    public AccountType(String mnemonic, String accName, LocalDate startDate) {
     }
 
     @Column(name = "ACC_TYPE_ID")

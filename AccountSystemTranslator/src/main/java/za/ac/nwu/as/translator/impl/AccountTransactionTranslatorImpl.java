@@ -6,7 +6,6 @@ import za.ac.nwu.as.domain.dto.AccountTransactionDto;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
 import za.ac.nwu.as.repository.persistence.AccountTransactionRepository;
 import za.ac.nwu.as.translator.AccountTransactionTranslator;
-
 import java.util.ArrayList;
 import java.util.List;
 

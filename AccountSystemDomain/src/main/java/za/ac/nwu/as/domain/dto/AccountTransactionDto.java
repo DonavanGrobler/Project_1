@@ -3,7 +3,7 @@ package za.ac.nwu.as.domain.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import za.ac.nwu.ac.domain.persistence.AccountTransaction;
+import za.ac.nwu.as.domain.persistence.AccountTransaction;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -33,7 +33,7 @@ public class AccountTransactionDto implements Serializable {
     }
 
     public AccountTransactionDto(AccountTransaction accountTransaction) {
-        this.setMemberId(accountTransaction.getMemberID());
+        this.setMemberId(accountTransaction.getMemberId());
         this.setGainedMiles(accountTransaction.getGainedMiles());
         this.setTransactionDate(accountTransaction.getTransactionDate());
     }
@@ -77,15 +77,15 @@ public class AccountTransactionDto implements Serializable {
 
     @ApiModelProperty(
             position = 3,
-            value = "Amount",
-            name = "Amount",
-            notes = "Amount on the member's account",
+            value = "Gained Miles",
+            name = "gainedMiles",
+            notes = "Amount of gained miles on the member's account",
             dataType = "java.lang.String",
             example = "200",
             required = true
     )
     public Integer getGainedMiles() {
-        return amount;
+        return gainedMiles;
     }
 
     public void setGainedMiles(Integer gainedMiles) {
@@ -95,7 +95,7 @@ public class AccountTransactionDto implements Serializable {
     @ApiModelProperty(
             position = 4,
             value = "Transaction Date",
-            name = "txDate",
+            name = "transactionDate",
             notes = "The date the transaction occurred",
             dataType = "java.lang.String",
             example = "2021-02-01",
@@ -111,7 +111,7 @@ public class AccountTransactionDto implements Serializable {
 
     @JsonIgnore
     public AccountTransaction getTransaction() {
-        return new AccountTransaction(getAccountTypeId(),getMemberId(),gainedMiles(),transactionDate());
+        return new AccountTransaction(getAccountTypeId(),getMemberId(),getGainedMiles(),getTransactionDate());
     }
 
     @Override
@@ -132,8 +132,8 @@ public class AccountTransactionDto implements Serializable {
         return "AccountTransactionDto{" +
                 "AccountTypeId=" + AccountTypeId +
                 ", memberId=" + memberId +
-                ", amount=" + gainedMiles +
-                ", txDate=" + transactionDate +
+                ", gainedMiles=" + gainedMiles +
+                ", transactionDate=" + transactionDate +
                 '}';
     }
 }

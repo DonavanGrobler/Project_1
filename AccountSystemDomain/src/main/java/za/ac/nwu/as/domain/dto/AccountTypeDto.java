@@ -21,14 +21,14 @@ public class AccountTypeDto implements Serializable {
     public AccountTypeDto(String mnemonic, String accName, LocalDate startDate) {
         this.mnemonic = mnemonic;
         this.accName = accName;
-        this.accName = startDate;
+        this.startDate = startDate;
     }
 
-    public AccountTypeDto(Long accountTypeID, String mnemonic, String accName, LocalDate startDate) {
-        this.accountTypeId = accountTypeId;
+    public AccountTypeDto(Long accTypeId, String mnemonic, String accName, LocalDate startDate) {
+        this.accTypeId = accTypeId;
         this.mnemonic = mnemonic;
-        this.accountTypeName = accName;
-        this.creationDate = startDate;
+        this.accName = accName;
+        this.startDate = startDate;
     }
 
     public AccountTypeDto(AccountType accountType) {
@@ -78,8 +78,8 @@ public class AccountTypeDto implements Serializable {
 
     @ApiModelProperty(
             position = 3,
-            value = "AccountType Creation Date",
-            name = "CreationDate",
+            value = "AccountType Start Date",
+            name = "StartDate",
             notes = "This is the date on which the account type was created",
             dataType = "java.lang.String",
             example = "2021-01-01",
@@ -94,12 +94,12 @@ public class AccountTypeDto implements Serializable {
     }
 
     @JsonIgnore
-    public Long getAccountTypeId() {
-        return accountTypeId;
+    public Long getAccTypeIdcTypeId() {
+        return accTypeId;
     }
     @JsonIgnore
-    public void setAccountTypeId(Long accountTypeId) {
-        this.accountTypeId = accountTypeId;
+    public void setAccTypeId(Long accountTypeId) {
+        this.accTypeId = accTypeId;
     }
 
     @Override
@@ -107,25 +107,25 @@ public class AccountTypeDto implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountTypeDto that = (AccountTypeDto) o;
-        return Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(creationDate, that.creationDate);
+        return Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accName, that.accName) && Objects.equals(startDate, that.startDate);
     }
 
     @JsonIgnore
     public AccountType getAccountType() {
-        return new AccountType(getMnemonic(),getAccountTypeName(),getCreationDate());
+        return new AccountType(getMnemonic(),getAccName(),getStartDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mnemonic, accountTypeName, creationDate);
+        return Objects.hash(mnemonic, accName, startDate);
     }
 
     @Override
     public String toString() {
         return "AccountTypeDto{" +
                 "mnemonic='" + mnemonic + '\'' +
-                ", accountTypeName='" + accountTypeName + '\'' +
-                ", creationDate=" + creationDate +
+                ", accName='" + accName + '\'' +
+                ", startDate=" + startDate +
                 '}';
     }
 }

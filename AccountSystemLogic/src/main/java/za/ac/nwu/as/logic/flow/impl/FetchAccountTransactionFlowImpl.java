@@ -19,8 +19,8 @@ public class FetchAccountTransactionFlowImpl implements FetchAccountTransactionF
     }
 
     @Override
-    public List<AccountTransactionDto> getAllTransactions()
+    public List<AccountTransactionDto> getAllAccountTransactions()
     {
-        return translator.getAllTransactions();
+        return null;
     }
 }

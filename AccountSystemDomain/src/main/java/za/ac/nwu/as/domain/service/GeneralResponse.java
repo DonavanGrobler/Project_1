@@ -11,6 +11,7 @@ public class GeneralResponse <T> implements Serializable {
         this.successful = successful;
         this.payload = payload;
     }
+
     public boolean isSuccessful() {
         return successful;
     }

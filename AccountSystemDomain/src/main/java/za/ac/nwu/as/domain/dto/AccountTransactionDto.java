@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -16,16 +15,16 @@ public class AccountTransactionDto implements Serializable {
 
     private Long AccountTypeId;
     private Long memberId;
-    private Integer gainedMiles;
+    private Long gainedMiles;
     private LocalDate transactionDate;
 
-    public AccountTransactionDto(Long memberId, Integer gainedMiles, LocalDate transactionDate) {
+    public AccountTransactionDto(Long memberId, Long gainedMiles, LocalDate transactionDate) {
         this.memberId = memberId;
         this.gainedMiles = gainedMiles;
         this.transactionDate = transactionDate;
     }
 
-    public AccountTransactionDto(Long memberID, Long AccountTypeId, Integer gainedMiles) {
+    public AccountTransactionDto(Long memberID, Long AccountTypeId, Long gainedMiles) {
         this.memberId = memberId;
         this.AccountTypeId = AccountTypeId;
         this.gainedMiles = gainedMiles;
@@ -39,7 +38,6 @@ public class AccountTransactionDto implements Serializable {
     }
 
     public AccountTransactionDto() {
-
     }
 
     @ApiModelProperty(position = 1,
@@ -84,11 +82,11 @@ public class AccountTransactionDto implements Serializable {
             example = "200",
             required = true
     )
-    public Integer getGainedMiles() {
+    public Long getGainedMiles() {
         return gainedMiles;
     }
 
-    public void setGainedMiles(Integer gainedMiles) {
+    public void setGainedMiles(Long gainedMiles) {
         this.gainedMiles = gainedMiles;
     }
 

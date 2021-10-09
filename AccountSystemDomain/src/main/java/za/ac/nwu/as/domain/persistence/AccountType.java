@@ -23,6 +23,8 @@ public class AccountType implements Serializable {
     private Long miles;
     private LocalDate startDate;
 
+    private Set<AccountTransaction> accountTransactions;
+
     public AccountType(Long accTypeId, String mnemonic, String accName, String userName, String userLastName, Long miles, LocalDate startDate) {
         this.accTypeId = accTypeId;
         this.mnemonic = mnemonic;

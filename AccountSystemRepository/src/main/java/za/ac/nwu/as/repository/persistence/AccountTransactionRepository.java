@@ -9,15 +9,5 @@ import za.ac.nwu.as.domain.persistence.AccountType;
 
 @Repository
 public interface AccountTransactionRepository extends JpaRepository<AccountTransaction, Long> {
-    //Savepoint
-    @Query(value = "SAVEPOINT SAVE_HERE",nativeQuery = true)
-    void createSavePoint();
 
-    //Committing to database
-    @Query(value = "COMMIT",nativeQuery = true)
-    void commitDB();
-
-    //Transaction Rollbacks
-    @Query(value = "ROLLBACK TO SAVEPOINT SAVE_HERE",nativeQuery = true)
-    void rollbackDB();
 }

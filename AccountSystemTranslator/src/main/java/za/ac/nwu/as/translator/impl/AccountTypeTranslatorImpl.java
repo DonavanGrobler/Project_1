@@ -23,11 +23,10 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     public List<AccountTypeDto> getAllAccountTypes() {
         List<AccountTypeDto> accountTypeDtos = new ArrayList<>();
         try {
-            for (AccountType accountType: accountTypeRepository.findAll()) { // for all Accounts in the Repository
+            for (AccountType accountType: accountTypeRepository.findAll()) {
                 accountTypeDtos.add(new AccountTypeDto(accountType));
             }
         } catch (Exception e) {
-            // TODO: Log
             throw new RuntimeException("Unable to read from the database",e);
         }
         return accountTypeDtos;

@@ -4,14 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.as.domain.dto.AccountTransactionDto;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
-import za.ac.nwu.as.repository.persistence.AccountTransactionRepository;
+import za.ac.nwu.as.repo.persistence.AccountTransactionRepository;
 import za.ac.nwu.as.translator.AccountTransactionTranslator;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Component
 public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
     private final AccountTransactionRepository repo;
+
 
     @Autowired
     public AccountTransactionTranslatorImpl(AccountTransactionRepository repo) {

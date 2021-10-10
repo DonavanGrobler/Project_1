@@ -45,7 +45,7 @@ public class AccountTransactionDto implements Serializable {
             name = "accountTypeId",
             notes = "Uniquely identifies the account type of the account on which a transaction was performed",
             dataType = "java.lang.Long",
-            example = "3",
+            example = "5",
             required = true)
     public Long getAccountTypeId() {
         return AccountTypeId;
@@ -62,7 +62,7 @@ public class AccountTransactionDto implements Serializable {
             name = "memberId",
             notes = "Uniquely identifies a member",
             dataType = "java.lang.String",
-            example = "1001",
+            example = "1958",
             required = true
     )
     public Long getMemberId() {
@@ -96,7 +96,7 @@ public class AccountTransactionDto implements Serializable {
             name = "transactionDate",
             notes = "The date the transaction occurred",
             dataType = "java.lang.String",
-            example = "2021-02-01",
+            example = "2021-10-10",
             required = true
     )
     public LocalDate getTransactionDate() {

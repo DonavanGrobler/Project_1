@@ -82,7 +82,7 @@ public class AccountTypeDto implements Serializable {
             name = "StartDate",
             notes = "This is the date on which the account type was created",
             dataType = "java.lang.String",
-            example = "2021-01-01",
+            example = "2021-10-10",
             allowEmptyValue = true
     )
     public LocalDate getStartDate() {

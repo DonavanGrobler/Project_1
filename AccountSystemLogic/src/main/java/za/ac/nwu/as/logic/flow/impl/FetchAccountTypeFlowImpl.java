@@ -1,6 +1,5 @@
 package za.ac.nwu.as.logic.flow.impl;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.as.domain.dto.AccountTypeDto;
@@ -29,6 +28,10 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
     public AccountTypeDto getAccountTypeByMnemonic(String mnemonic) {
         return accountTypeTranslator.getAccountTypeByMnemonic(mnemonic);
 //        return null;
+    }
+
+    public boolean methodTest(){
+        return true;
     }
 
 }

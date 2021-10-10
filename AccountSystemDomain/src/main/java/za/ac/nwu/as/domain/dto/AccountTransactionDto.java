@@ -41,7 +41,7 @@ public class AccountTransactionDto implements Serializable {
     }
 
     @ApiModelProperty(position = 1,
-            value = "Account Type ID fo the account transaction",
+            value = "Account Type ID for the account transaction",
             name = "accountTypeId",
             notes = "Uniquely identifies the account type of the account on which a transaction was performed",
             dataType = "java.lang.Long",

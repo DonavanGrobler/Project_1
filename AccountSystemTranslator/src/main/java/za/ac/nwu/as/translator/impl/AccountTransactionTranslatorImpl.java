@@ -43,6 +43,5 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
         } catch (Exception e){
             throw new RuntimeException("Unable to save to the DB", e);
         }
-
     }
 }

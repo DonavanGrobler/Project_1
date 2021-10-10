@@ -13,3 +13,4 @@ import za.ac.nwu.as.logic.config.LogicConfig;
 })
 public class WebConfig {
 }
+

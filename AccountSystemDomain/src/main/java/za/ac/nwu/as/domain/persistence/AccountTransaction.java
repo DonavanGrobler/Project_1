@@ -7,31 +7,29 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNTTRANSACTION", schema = "PROJECT1" )
+@Table(name = "ACCOUNTTRANSACTION", schema = "DONAVAN" )
 public class AccountTransaction implements Serializable {
     private static final long serialVersionUID = 1199041377884282633L;
 
-    @Id
-    @SequenceGenerator(name = "ACCOUNTTRANSACTION_SEQ", sequenceName = "ACCOUNTTRANSACTION_SEQ.VIT_RSA_GENERIC_SEQ, allocationSize = 1")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNTTRANSACTION_SEQ")
-
-
     private Long transactionId;
-    private AccountType accTypeId;
+    private AccountType accType;
     private Long memberId;
     private Long gainedMiles;
     private LocalDate transactionDate;
 
     public AccountTransaction(Long accountTypeId, Long memberId, Long gainedMiles, LocalDate transactionDate) {
     }
-    public AccountTransaction(Long transactionId, AccountType accTypeId, Long memberId, Long gainedMiles, LocalDate transactionDate) {
+    public AccountTransaction(Long transactionId, AccountType accType, Long memberId, Long gainedMiles, LocalDate transactionDate) {
         this.transactionId = transactionId;
-        this.accTypeId = accTypeId;
+        this.accType = accType;
         this.memberId = memberId;
         this.gainedMiles = gainedMiles;
         this.transactionDate = transactionDate;
     }
 
+    @Id
+    @SequenceGenerator(name = "ACCOUNTTRANSACTION_SEQ", sequenceName = "DONAVAN.ACCOUNTTRANSACTION_SEQ, allocationSize = 1")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNTTRANSACTION_SEQ")
     @Column(name = "TRANSACTION_ID")
     public Long getTransactionId() {
         return transactionId;
@@ -42,11 +40,11 @@ public class AccountTransaction implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn (name = "ACC_TYPE_ID")
-    public AccountType getAccTypeId() {
-        return accTypeId;
+    public AccountType getAccType() {
+        return accType;
     }
-    public void setAccTypeId(AccountType accTypeId) {
-        this.accTypeId = accTypeId;
+    public void setAccType(AccountType accTypeId) {
+        this.accType = accTypeId;
     }
 
     @Column(name = "MEMBER_ID")
@@ -77,22 +75,22 @@ public class AccountTransaction implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountTransaction that = (AccountTransaction) o;
-        return Objects.equals(transactionId, that.transactionId) && Objects.equals(accTypeId, that.accTypeId) && Objects.equals(memberId, that.memberId) && Objects.equals(gainedMiles, that.gainedMiles) && Objects.equals(transactionDate, that.transactionDate);
+        return Objects.equals(transactionId, that.transactionId) && Objects.equals(accType, that.accType) && Objects.equals(memberId, that.memberId) && Objects.equals(gainedMiles, that.gainedMiles) && Objects.equals(transactionDate, that.transactionDate);
     }
 
     public void setAccountType(AccountType accountType) {
-        this.accTypeId = accountType;
+        this.accType = accountType;
     }
     @Override
     public int hashCode() {
-        return Objects.hash(transactionId, accTypeId, memberId, gainedMiles, transactionDate);
+        return Objects.hash(transactionId, accType, memberId, gainedMiles, transactionDate);
     }
 
     @Override
     public String toString() {
         return "AccountTransaction{" +
                 "transactionId=" + transactionId +
-                ", accTypeId=" + accTypeId +
+                ", accTypeId=" + accType +
                 ", memberId=" + memberId +
                 ", gainedMiles=" + gainedMiles +
                 ", transactionDate=" + transactionDate +

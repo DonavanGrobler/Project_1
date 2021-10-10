@@ -7,13 +7,8 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACC_TYPE_TABLE", schema = "PROJECT1" )
+@Table(name = "ACCOUNTTYPE", schema = "DONAVAN" )
 public class AccountType implements Serializable {
-
-    @Id
-    @SequenceGenerator(name = "ACC_TYPE_TABLE_SEQ", sequenceName = "ACC_TYPE_TABLE_SEQ.VIT_RSA_GENERIC_SEQ, allocationSize = 1")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACC_TYPE_TABLE_SEQ")
-
 
     private Long accTypeId;
     private String mnemonic;
@@ -38,6 +33,9 @@ public class AccountType implements Serializable {
     public AccountType(String mnemonic, String accName, LocalDate startDate) {
     }
 
+    @Id
+    @SequenceGenerator(name = "ACCOUNTTYPE_SEQ", sequenceName = "DONAVAN.ACCOUNTTYPE_SEQ, allocationSize = 1")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNTTYPE_SEQ")
     @Column(name = "ACC_TYPE_ID")
     public Long getAccTypeId() {
         return accTypeId;

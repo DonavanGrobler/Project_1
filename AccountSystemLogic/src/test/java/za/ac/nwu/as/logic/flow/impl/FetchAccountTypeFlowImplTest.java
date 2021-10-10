@@ -4,24 +4,23 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class FetchAccountTypeFlowImplTest {
-
-    private FetchAccountTypeFlowImpl classToTest;
+    private FetchAccountTypeFlowImpl testClass;
 
     @BeforeEach
     void setUp() {
-        classToTest = new FetchAccountTypeFlowImpl(null);
+        testClass = new FetchAccountTypeFlowImpl(null);
     }
 
     @AfterEach
     void tearDown() {
-        classToTest = null;
+        testClass = null;
     }
 
     @Test
-    void methodTest() {
-        assertTrue(classToTest.methodTest());
+    void methodToTest() {
+        assertTrue(testClass.methodToTest());
     }
 }

@@ -29,7 +29,7 @@ public class AccountTransactionController {
         this.createAccountTransactionFlow = createAccountTransactionFlow;
     }
 
-    @GetMapping("/all") // fetch all configured account types
+    @GetMapping("/all")
     @ApiOperation(value = "Gets all the configured Account Transactions", notes = "Returns a list of Account Transactions")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Account Types Returned", response = GeneralResponse.class),

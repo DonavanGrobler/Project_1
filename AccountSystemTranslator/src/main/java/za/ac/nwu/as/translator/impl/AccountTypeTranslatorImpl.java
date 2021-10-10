@@ -62,6 +62,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
         }
     }
 
+
     @Override
     @Transactional
     public AccountTypeDto deleteAccountTypeByMnemonic(String mnemonic) {
